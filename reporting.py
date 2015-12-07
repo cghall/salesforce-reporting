@@ -54,16 +54,22 @@ class ReportParser:
     def get_data(self):
         pass
 
-    def get_record_count(self):
-        pass
-
     def get_grand_total(self):
         return self.data["factMap"]["T!T"]["aggregates"][0]["value"]
 
 
-class MatrixReport(ReportParser):
+class MatrixParser(ReportParser):
     def __init__(self, report):
         self.data = report
+        self._check_type()
+
+    def _check_type(self):
+        report_format = self.data["reportMetadata"]["reportFormat"]
+
+        if report_format != "MATRIX":
+            return 'Incorrect Report Type: Expected MATRIX received {}'.format(report_format)
+        else:
+            pass
 
     def get_col_total(self, col_heading, default=None):
         grp_across_list = self.data["groupingsAcross"]["groupings"]
@@ -81,4 +87,16 @@ class MatrixReport(ReportParser):
             return default
 
     def get_row_total(self, row_heading, default=None):
-        pass
+        grp_down_list = self.data["groupingsDown"]["groupings"]
+
+        row_labels = [grp["label"] for grp in grp_down_list]
+        row_keys = [int(grp["key"]) for grp in grp_down_list]
+        row_dict = dict(zip(row_labels, row_keys))
+
+        try:
+            row_key = row_dict[row_heading]
+            aggregate_key = '{}!T'.format(row_key)
+            return self.data["factMap"][aggregate_key]["aggregates"][0]["value"]
+
+        except KeyError:
+            return default
