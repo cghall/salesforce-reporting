@@ -22,13 +22,16 @@ class Connection:
         token_request = requests.post(login_url, data=payload)
         return token_request.json()['access_token']
 
-    def get_report(self, report_id, filters=None):
+    def get_report(self, report_id, filters=None, details=True):
         url = self.base_url + report_id
 
         if filters:
             return self._get_report_filtered(url, filters)
         else:
             return self._get_report_all(url)
+        #
+        # if details:
+        #     url = url +
 
     def _get_metadata(self, url):
         return requests.get(url + '/describe', headers=self.headers).json()
