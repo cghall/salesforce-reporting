@@ -67,16 +67,13 @@ class MatrixParser(ReportParser):
         report_format = self.data["reportMetadata"]["reportFormat"]
 
         if report_format != "MATRIX":
-            return 'Incorrect Report Type: Expected MATRIX received {}'.format(report_format)
+            raise ValueError
         else:
             pass
 
     def get_col_total(self, col_heading, default=None):
         grp_across_list = self.data["groupingsAcross"]["groupings"]
-
-        col_labels = [grp["label"] for grp in grp_across_list]
-        col_keys = [int(grp["key"]) for grp in grp_across_list]
-        col_dict = dict(zip(col_labels, col_keys))
+        col_dict = {grp['label']: int(grp['key']) for grp in grp_across_list}
 
         try:
             col_key = col_dict[col_heading]
@@ -88,10 +85,7 @@ class MatrixParser(ReportParser):
 
     def get_row_total(self, row_heading, default=None):
         grp_down_list = self.data["groupingsDown"]["groupings"]
-
-        row_labels = [grp["label"] for grp in grp_down_list]
-        row_keys = [int(grp["key"]) for grp in grp_down_list]
-        row_dict = dict(zip(row_labels, row_keys))
+        row_dict = {grp["label"]: int(grp["key"]) for grp in grp_down_list}
 
         try:
             row_key = row_dict[row_heading]

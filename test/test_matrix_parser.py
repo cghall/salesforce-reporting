@@ -12,9 +12,7 @@ class MatrixParserTest(unittest.TestCase):
         return report_data
 
   def test_check_report_type_incorrect(self):
-    report = MatrixParser(self.build_mock_report('test/test_data/simple_summary.json'))
-
-    self.assertEquals(report, 'Incorrect Report Type: Expected MATRIX received SUMMARY')
+    self.assertRaises(ValueError, MatrixParser, self.build_mock_report('test/test_data/simple_summary.json'))
 
   def test_get_col_total_col_found(self):
     report = MatrixParser(self.build_mock_report('test/test_data/simple_matrix.json'))
