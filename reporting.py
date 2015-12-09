@@ -23,15 +23,13 @@ class Connection:
         return token_request.json()['access_token']
 
     def get_report(self, report_id, filters=None, details=True):
-        url = self.base_url + report_id
+        details = 'true' if details else 'false'
+        url = '{}{}?includeDetails={}'.format(self.base_url, report_id, details)
 
         if filters:
             return self._get_report_filtered(url, filters)
         else:
             return self._get_report_all(url)
-        #
-        # if details:
-        #     url = url +
 
     def _get_metadata(self, url):
         return requests.get(url + '/describe', headers=self.headers).json()
@@ -94,3 +92,23 @@ class MatrixParser(ReportParser):
 
         except KeyError:
             return default
+
+    def series(self, col_grp):
+        grp_across_list = self.data["groupingsAcross"]["groupings"]
+        row_groupings = self.data["groupingsDown"]["groupings"]
+        col_dict = {grp['label']: int(grp['key']) for grp in grp_across_list}
+        col_key = col_dict[col_grp]
+
+        keys = []
+
+        for index, row_grp in enumerate(row_groupings):
+            key = "{}!{}".format(index, col_key)
+            keys.append(key)
+
+        values = []
+
+        for key in keys:
+            value = self.data["factMap"][key]["aggregates"][0]["value"]
+            values.append(value)
+
+        return values
