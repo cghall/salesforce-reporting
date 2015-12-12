@@ -93,22 +93,81 @@ class MatrixParser(ReportParser):
         except KeyError:
             return default
 
-    def series(self, col_grp):
-        grp_across_list = self.data["groupingsAcross"]["groupings"]
-        row_groupings = self.data["groupingsDown"]["groupings"]
-        col_dict = {grp['label']: int(grp['key']) for grp in grp_across_list}
+    def _get_grp_levels(self, grp):
+        level = 0
+
+        if grp is not None:
+            if type(grp) is str:
+                level = 1
+            else:
+                level = len(grp)
+
+        return level
+
+    def _get_subgroup_key(self, grouping, group_of_interest):
+        name_key_dict = {grp['label']: i for i, grp in enumerate(grouping)}
+        key = name_key_dict[group_of_interest]
+        return key
+
+    def _get_grouping(self, group_of_interest, start_grouping, count):
+        count = count
+        grouping = start_grouping
+        while count > 1:
+            subgroup_key = self._get_subgroup_key(grouping, group_of_interest[count-2])
+            grouping = start_grouping[subgroup_key]["groupings"]
+            count = count - 1
+            self._get_grouping(group_of_interest[count-2], grouping, count)
+        return grouping
+
+    def _set_col_key(self, col_grp):
+        col_grp_level = self._get_grp_levels(col_grp)
+        top_level_grouping = self.data["groupingsAcross"]["groupings"]
+        col_groupings = self._get_grouping(col_grp, top_level_grouping, col_grp_level)
+
+        col_dict = {grp['label']: grp['key'] for grp in col_groupings}
+
+        if col_grp_level > 1:
+            col_grp = col_grp[col_grp_level-1]
+
         col_key = col_dict[col_grp]
+
+        return col_key
+
+    def _build_key_label_dict(self, col_grp, row_grp):
+
+        row_grp_level = self._get_grp_levels(row_grp)
+        row_groupings = self.data["groupingsDown"]["groupings"]
+
+        col_key = self._set_col_key(col_grp)
+
+        if row_grp_level > 0:
+            row_dict = {grp['label']: int(grp['key']) for grp in row_groupings}
+            row_key = row_dict[row_grp]
+
+            for _ in range(row_grp_level):
+                row_groupings = row_groupings[row_key]["groupings"]
+
+        row_keys = [row_grp["key"] for row_grp in row_groupings]
 
         keys = []
 
-        for index, row_grp in enumerate(row_groupings):
-            key = "{}!{}".format(index, col_key)
+        for el in row_keys:
+            key = "{}!{}".format(el, col_key)
             keys.append(key)
+        labels = [row_grp["label"] for row_grp in row_groupings]
+
+        return {"keys": keys, "labels": labels}
+
+    def series_down(self, col_grp, row_grp=None):
+        key_label_dict = self._build_key_label_dict(col_grp, row_grp)
 
         values = []
 
-        for key in keys:
+        for key in key_label_dict["keys"]:
             value = self.data["factMap"][key]["aggregates"][0]["value"]
             values.append(value)
 
-        return values
+        labels = key_label_dict["labels"]
+
+        series = dict(zip(labels, values))
+        return series

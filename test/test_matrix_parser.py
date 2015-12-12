@@ -56,9 +56,24 @@ class MatrixParserTest(unittest.TestCase):
 
         self.assertAlmostEqual(row_total, 89.01, 2)
 
-    def test_get_series_for_col(self):
+    def test_series_for_col(self):
         matrix = MatrixParser(self.build_mock_report('test/test_data/basic_matrix.json'))
 
-        series = matrix.series('London')
+        series = matrix.series_down('London')
 
-        self.assertEquals(series, [385, 339])
+        self.assertEquals(series, {'CY2014': 385, 'CY2015': 339})
+
+    def test_series_for_col_with_row_grouping(self):
+        matrix = MatrixParser(self.build_mock_report('test/test_data/basic_matrix.json'))
+
+        series = matrix.series_down('Birmingham', row_grp='CY2015')
+
+        self.assertEquals(series["Online advert"], 4)
+        self.assertEquals(series["Word of mouth"], 6)
+
+    def test_series_for_col_with_col_grouping(self):
+        matrix = MatrixParser(self.build_mock_report('test/test_data/nested_matrix.json'))
+
+        series = matrix.series_down(['Brighton & Hove', 'Hove Park School'])
+
+        self.assertAlmostEqual(series["November 2014"], 65.63, 2)
