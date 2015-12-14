@@ -95,80 +95,102 @@ class MatrixParser(ReportParser):
             return default
 
     @staticmethod
-    def _get_value_subgroup_index(value_dict, group_of_interest):
-        labels_with_index = {group['label']: index for index, group in enumerate(value_dict)}
-        value_index = labels_with_index[group_of_interest]
-        return value_index
+    def _convert_parameter(parameter):
+        if type(parameter) is str:
+            new_parameter = [parameter]
+        elif parameter is None:
+            new_parameter = []
+        elif type(parameter) is list:
+            new_parameter = parameter
+        else:
+            raise ValueError
+        return new_parameter
 
-    def _get_value_dict(self, group_of_interest, start_grouping, count):
-        value_dict = start_grouping
+    @staticmethod
+    def _get_subgroup_index(group_above, subgroup_name):
+        subgroups_with_index = {subgroup['label']: index for index, subgroup in enumerate(group_above)}
+        index = subgroups_with_index[subgroup_name]
+        return index
+
+    def _get_grouping(self, groups_of_interest, start_grouping, count):
+        current_grouping = start_grouping
+
         while count > 1:
-            subgroup_key = self._get_value_subgroup_index(value_dict, group_of_interest[count-2])
-            value_dict = value_dict[subgroup_key]["groupings"]
+            group_name = groups_of_interest[count - 2]
+            subgroup_index = self._get_subgroup_index(current_grouping, group_name)
+            current_grouping = current_grouping[subgroup_index]["groupings"]
             count -= 1
-            self._get_value_dict(group_of_interest[count-2], value_dict, count)
-        return value_dict
+            self._get_grouping(group_name, current_grouping, count)
 
-    def _set_value_key(self, value_groups_of_interest):
-        value_grouping_level = len(value_groups_of_interest)
-        top_level_grouping = self.data["groupingsAcross"]["groupings"]
-        value_groupings = self._get_value_dict(value_groups_of_interest, top_level_grouping, value_grouping_level)
+        return current_grouping
 
-        keys = {grp['label']: grp['key'] for grp in value_groupings}
+    def _get_static_key(self, groups_of_interest, static_grouping_key):
+        grouping_depth = len(groups_of_interest)
+        group_index = grouping_depth - 1
+        top_grouping = self.data[static_grouping_key]["groupings"]
+        grouping = self._get_grouping(groups_of_interest, top_grouping, grouping_depth)
 
-        value_key = keys[value_groups_of_interest[value_grouping_level - 1]]
+        keys = {group['label']: group['key'] for group in grouping}
+        static_key = keys[groups_of_interest[group_index]]
 
-        return value_key
+        return static_key
 
-    def _build_keys_with_labels(self, value_groups_of_interest, label_groups_of_interest):
-        label_grouping = self.data["groupingsDown"]["groupings"]
-        label_grouping_level = len(label_groups_of_interest)
-        value_key = self._set_value_key(value_groups_of_interest)
+    def _get_dynamic_keys(self, groups_of_interest, dynamic_grouping_key):
+        grouping_depth = len(groups_of_interest) + 1
+        top_grouping = self.data[dynamic_grouping_key]["groupings"]
+        grouping = self._get_grouping(groups_of_interest, top_grouping, grouping_depth)
 
-        if label_grouping_level > 0:
-            row_dict = {grp['label']: int(grp['key']) for grp in label_grouping}
-            row_key = row_dict[label_groups_of_interest[label_grouping_level - 1]]
+        dynamic_keys = [group["key"] for group in grouping]
+        labels = [group["label"] for group in grouping]
 
-            for _ in range(label_grouping_level):
-                label_grouping = label_grouping[row_key]["groupings"]
+        return {"keys": dynamic_keys, "labels": labels}
 
-        label_keys = [label_grp["key"] for label_grp in label_grouping]
+    def _build_keys(self, static_groups_of_interest, dynamic_groups_of_interest, static_grouping_key,
+                    dynamic_grouping_key):
+        static_key = self._get_static_key(static_groups_of_interest, static_grouping_key)
+        dynamic_keys = self._get_dynamic_keys(dynamic_groups_of_interest, dynamic_grouping_key)
 
         keys = []
 
-        for el in label_keys:
-            key = "{}!{}".format(el, value_key)
-            keys.append(key)
-        labels = [label_grp["label"] for label_grp in label_grouping]
-
-        return {"keys": keys, "labels": labels}
-
-    def series_down(self, col_grp, row_grp=None, summary_value_position=0):
-
-        if type(col_grp) is str:
-            first_value_group_of_interest = col_grp
-            value_groups_of_interest = [first_value_group_of_interest]
+        if static_grouping_key == "groupingsAcross":
+            for el in dynamic_keys["keys"]:
+                key = "{}!{}".format(el, static_key)
+                keys.append(key)
         else:
-            value_groups_of_interest = col_grp
+            for el in dynamic_keys["keys"]:
+                key = "{}!{}".format(static_key, el)
+                keys.append(key)
 
-        if row_grp is not None:
-            if type(row_grp) is str:
-                first_label_group_of_interest = row_grp
-                label_groups_of_interest = [first_label_group_of_interest]
-            else:
-                label_groups_of_interest = row_grp
-        else:
-            label_groups_of_interest = []
+        return {"keys": keys, "labels": dynamic_keys["labels"]}
 
-        keys_with_labels = self._build_keys_with_labels(value_groups_of_interest, label_groups_of_interest)
+    def _series(self, static_groups_of_interest, static_grouping_key, dynamic_grouping_key,
+                dynamic_groups_of_interest=None, value_position=0):
+        static_groups_of_interest = self._convert_parameter(static_groups_of_interest)
+        dynamic_groups_of_interest = self._convert_parameter(dynamic_groups_of_interest)
+        keys_labels = self._build_keys(static_groups_of_interest, dynamic_groups_of_interest,
+                                       static_grouping_key, dynamic_grouping_key)
 
+        labels = keys_labels["labels"]
         values = []
 
-        for key in keys_with_labels["keys"]:
-            value = self.data["factMap"][key]["aggregates"][summary_value_position]["value"]
+        for key in keys_labels["keys"]:
+            value = self.data["factMap"][key]["aggregates"][value_position]["value"]
             values.append(value)
-
-        labels = keys_with_labels["labels"]
 
         series = dict(zip(labels, values))
         return series
+
+    def series_down(self, column_groups, row_groups=None, value_position=0):
+        static_grouping_key = "groupingsAcross"
+        dynamic_grouping_key = "groupingsDown"
+
+        return self._series(column_groups, static_grouping_key, dynamic_grouping_key,
+                            dynamic_groups_of_interest=row_groups, value_position=value_position)
+
+    def series_across(self, row_groups, col_groups=None, value_position=0):
+        static_grouping_key = "groupingsDown"
+        dynamic_grouping_key = "groupingsAcross"
+
+        return self._series(row_groups, static_grouping_key, dynamic_grouping_key,
+                            dynamic_groups_of_interest=col_groups, value_position=value_position)
+

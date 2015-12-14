@@ -63,10 +63,19 @@ class MatrixParserTest(unittest.TestCase):
 
         self.assertEquals(series, {'CY2014': 385, 'CY2015': 339})
 
+    def test_series_for_row(self):
+        matrix = MatrixParser(self.build_mock_report('test/test_data/basic_matrix.json'))
+
+        series = matrix.series_across('CY2015')
+
+        self.assertEquals(series["Sheffield"], 97)
+
     def test_series_for_col_with_row_grouping(self):
         matrix = MatrixParser(self.build_mock_report('test/test_data/basic_matrix.json'))
 
-        series = matrix.series_down('Birmingham', row_grp='CY2015')
+        series = matrix.series_down('Birmingham', row_groups='CY2015')
+
+        print(series)
 
         self.assertEquals(series["Online advert"], 4)
         self.assertEquals(series["Word of mouth"], 6)
@@ -81,6 +90,20 @@ class MatrixParserTest(unittest.TestCase):
     def test_series_down_multiple_groupings_and_metrics(self):
         matrix = MatrixParser(self.build_mock_report('test/test_data/multiple_matrix.json'))
 
-        series = matrix.series_down(['Sheffield', 'Maths'], row_grp='CY2015', summary_value_position=1)
+        series = matrix.series_down(['Sheffield', 'Maths'], row_groups='CY2015', value_position=1)
 
         self.assertEquals(series["Online advert"], 3)
+
+    def test_series_across_multiple_row_groupings(self):
+        matrix = MatrixParser(self.build_mock_report('test/test_data/basic_matrix.json'))
+
+        series = matrix.series_across(["CY2014", "Word of mouth"])
+
+        self.assertEquals(series["Bristol"], 10)
+
+    def test_series_across_multiple_groupings_and_metrics(self):
+        matrix = MatrixParser(self.build_mock_report('test/test_data/multiple_matrix.json'))
+
+        series = matrix.series_across(['CY2014', 'Word of mouth'], col_groups='London', value_position=1)
+
+        self.assertEquals(series["Maths"], 29)
