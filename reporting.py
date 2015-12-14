@@ -17,7 +17,8 @@ class Connection:
         self.headers = {'Authorization': 'OAuth {}'.format(self.token)}
         self.base_url = 'https://{}.salesforce.com/services/data/v29.0/analytics/reports/'.format(instance)
 
-    def _get_token(self, payload):
+    @staticmethod
+    def _get_token(payload):
         login_url = 'https://login.salesforce.com/services/oauth2/token'
         token_request = requests.post(login_url, data=payload)
         return token_request.json()['access_token']
@@ -93,81 +94,81 @@ class MatrixParser(ReportParser):
         except KeyError:
             return default
 
-    def _get_grp_levels(self, grp):
-        level = 0
+    @staticmethod
+    def _get_value_subgroup_index(value_dict, group_of_interest):
+        labels_with_index = {group['label']: index for index, group in enumerate(value_dict)}
+        value_index = labels_with_index[group_of_interest]
+        return value_index
 
-        if grp is not None:
-            if type(grp) is str:
-                level = 1
-            else:
-                level = len(grp)
-
-        return level
-
-    def _get_subgroup_key(self, grouping, group_of_interest):
-        name_key_dict = {grp['label']: i for i, grp in enumerate(grouping)}
-        key = name_key_dict[group_of_interest]
-        return key
-
-    def _get_grouping(self, group_of_interest, start_grouping, count):
-        count = count
-        grouping = start_grouping
+    def _get_value_dict(self, group_of_interest, start_grouping, count):
+        value_dict = start_grouping
         while count > 1:
-            subgroup_key = self._get_subgroup_key(grouping, group_of_interest[count-2])
-            grouping = start_grouping[subgroup_key]["groupings"]
-            count = count - 1
-            self._get_grouping(group_of_interest[count-2], grouping, count)
-        return grouping
+            subgroup_key = self._get_value_subgroup_index(value_dict, group_of_interest[count-2])
+            value_dict = value_dict[subgroup_key]["groupings"]
+            count -= 1
+            self._get_value_dict(group_of_interest[count-2], value_dict, count)
+        return value_dict
 
-    def _set_col_key(self, col_grp):
-        col_grp_level = self._get_grp_levels(col_grp)
+    def _set_value_key(self, value_groups_of_interest):
+        value_grouping_level = len(value_groups_of_interest)
         top_level_grouping = self.data["groupingsAcross"]["groupings"]
-        col_groupings = self._get_grouping(col_grp, top_level_grouping, col_grp_level)
+        value_groupings = self._get_value_dict(value_groups_of_interest, top_level_grouping, value_grouping_level)
 
-        col_dict = {grp['label']: grp['key'] for grp in col_groupings}
+        keys = {grp['label']: grp['key'] for grp in value_groupings}
 
-        if col_grp_level > 1:
-            col_grp = col_grp[col_grp_level-1]
+        value_key = keys[value_groups_of_interest[value_grouping_level - 1]]
 
-        col_key = col_dict[col_grp]
+        return value_key
 
-        return col_key
+    def _build_keys_with_labels(self, value_groups_of_interest, label_groups_of_interest):
+        label_grouping = self.data["groupingsDown"]["groupings"]
+        label_grouping_level = len(label_groups_of_interest)
+        value_key = self._set_value_key(value_groups_of_interest)
 
-    def _build_key_label_dict(self, col_grp, row_grp):
+        if label_grouping_level > 0:
+            row_dict = {grp['label']: int(grp['key']) for grp in label_grouping}
+            row_key = row_dict[label_groups_of_interest[label_grouping_level - 1]]
 
-        row_grp_level = self._get_grp_levels(row_grp)
-        row_groupings = self.data["groupingsDown"]["groupings"]
+            for _ in range(label_grouping_level):
+                label_grouping = label_grouping[row_key]["groupings"]
 
-        col_key = self._set_col_key(col_grp)
-
-        if row_grp_level > 0:
-            row_dict = {grp['label']: int(grp['key']) for grp in row_groupings}
-            row_key = row_dict[row_grp]
-
-            for _ in range(row_grp_level):
-                row_groupings = row_groupings[row_key]["groupings"]
-
-        row_keys = [row_grp["key"] for row_grp in row_groupings]
+        label_keys = [label_grp["key"] for label_grp in label_grouping]
 
         keys = []
 
-        for el in row_keys:
-            key = "{}!{}".format(el, col_key)
+        for el in label_keys:
+            key = "{}!{}".format(el, value_key)
             keys.append(key)
-        labels = [row_grp["label"] for row_grp in row_groupings]
+        labels = [label_grp["label"] for label_grp in label_grouping]
 
         return {"keys": keys, "labels": labels}
 
-    def series_down(self, col_grp, row_grp=None):
-        key_label_dict = self._build_key_label_dict(col_grp, row_grp)
+    def series_down(self, col_grp, row_grp=None, summary_value_position=0):
+
+        if type(col_grp) is str:
+            first_value_group_of_interest = col_grp
+            value_groups_of_interest = [first_value_group_of_interest]
+        else:
+            value_groups_of_interest = col_grp
+
+        if row_grp is not None:
+            if type(row_grp) is str:
+                first_label_group_of_interest = row_grp
+                label_groups_of_interest = [first_label_group_of_interest]
+            else:
+                label_groups_of_interest = row_grp
+        else:
+            label_groups_of_interest = []
+
+        keys_with_labels = self._build_keys_with_labels(value_groups_of_interest, label_groups_of_interest)
 
         values = []
 
-        for key in key_label_dict["keys"]:
-            value = self.data["factMap"][key]["aggregates"][0]["value"]
+        for key in keys_with_labels["keys"]:
+            value = self.data["factMap"][key]["aggregates"][summary_value_position]["value"]
             values.append(value)
 
-        labels = key_label_dict["labels"]
+        labels = keys_with_labels["labels"]
 
         series = dict(zip(labels, values))
         return series

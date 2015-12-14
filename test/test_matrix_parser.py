@@ -71,9 +71,16 @@ class MatrixParserTest(unittest.TestCase):
         self.assertEquals(series["Online advert"], 4)
         self.assertEquals(series["Word of mouth"], 6)
 
-    def test_series_for_col_with_col_grouping(self):
+    def test_series_down_with_multiple_col_groupings(self):
         matrix = MatrixParser(self.build_mock_report('test/test_data/nested_matrix.json'))
 
         series = matrix.series_down(['Brighton & Hove', 'Hove Park School'])
 
         self.assertAlmostEqual(series["November 2014"], 65.63, 2)
+
+    def test_series_down_multiple_groupings_and_metrics(self):
+        matrix = MatrixParser(self.build_mock_report('test/test_data/multiple_matrix.json'))
+
+        series = matrix.series_down(['Sheffield', 'Maths'], row_grp='CY2015', summary_value_position=1)
+
+        self.assertEquals(series["Online advert"], 3)
