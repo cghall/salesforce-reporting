@@ -72,9 +72,41 @@ class ReportParser:
     """
     def __init__(self, report):
         self.data = report
+        self.type = self.data["reportMetadata"]["reportFormat"]
+        self.has_details = self.data["hasDetailRows"]
 
     def get_grand_total(self):
         return self.data["factMap"]["T!T"]["aggregates"][0]["value"]
+
+    @staticmethod
+    def _flatten_record(record):
+        return [field["label"] for field in record]
+
+    def records(self):
+        """
+        Return a list of all records included in the report
+
+        If detail rows are not included in the report a ValueError is returned instead.
+
+        Returns
+        -------
+        records: list
+        """
+        if self.has_details:
+            records = []
+            fact_map = self.data["factMap"]
+            groupings = list(fact_map.values())
+
+            for group in groupings:
+                rows = group["rows"]
+                group_records = [self._flatten_record(row["dataCells"]) for row in rows]
+
+                for record in group_records:
+                    records.append(record)
+
+            return records
+        else:
+            raise ValueError('Report does not include details so cannot access individual records')
 
 
 class MatrixParser(ReportParser):
