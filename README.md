@@ -23,7 +23,7 @@ parser.records()
 
 Easily return a specified series from a Matrix Report.
 
-![Alt text]('examples/matrix_report.jpg')
+![Alt text](examples/matrix_report.jpg)
 For this report doing this:
 ```python
 report = my_sf.get_report('report_id')
