@@ -2,8 +2,9 @@ import requests
 
 
 class Connection:
-    """ General class for creating a connection to Salesforce via Reporting API with methods
-    for accessing reports"""
+    """
+    Connection to the Salesforce Reporting API
+    """
 
     def __init__(self, client_id, client_secret, username, password, instance):
         payload = {
@@ -23,15 +24,6 @@ class Connection:
         token_request = requests.post(login_url, data=payload)
         return token_request.json()['access_token']
 
-    def get_report(self, report_id, filters=None, details=True):
-        details = 'true' if details else 'false'
-        url = '{}{}?includeDetails={}'.format(self.base_url, report_id, details)
-
-        if filters:
-            return self._get_report_filtered(url, filters)
-        else:
-            return self._get_report_all(url)
-
     def _get_metadata(self, url):
         return requests.get(url + '/describe', headers=self.headers).json()
 
@@ -45,20 +37,56 @@ class Connection:
     def _get_report_all(self, url):
         return requests.post(url, headers=self.headers).json()
 
+    def get_report(self, report_id, filters=None, details=True):
+        """
+        Return report content as a dict
+
+        Parameters
+        ----------
+        report_id: string
+            Salesforce Id of target report
+        filters: dict, optional
+        details: boolean, default True
+            Whether or not detail rows are included in report output
+
+        Returns
+        -------
+        report: dict
+        """
+        details = 'true' if details else 'false'
+        url = '{}{}?includeDetails={}'.format(self.base_url, report_id, details)
+
+        if filters:
+            return self._get_report_filtered(url, filters)
+        else:
+            return self._get_report_all(url)
+
 
 class ReportParser:
+    """
+    Parser with generic functionality for all Report Types (Tabular, Summary, Matrix)
+
+    Parameters
+    ----------
+    report: dict, return value of Connection.get_report()
+    """
     def __init__(self, report):
         self.data = report
-
-    def get_data(self):
-        pass
 
     def get_grand_total(self):
         return self.data["factMap"]["T!T"]["aggregates"][0]["value"]
 
 
 class MatrixParser(ReportParser):
+    """
+    Parser with specific functionality for matrix reports
+
+    Parameters
+    ----------
+    report: dict, return value of Connection.get_report()
+    """
     def __init__(self, report):
+        super().__init__(report)
         self.data = report
         self._check_type()
 
@@ -71,6 +99,19 @@ class MatrixParser(ReportParser):
             pass
 
     def get_col_total(self, col_heading, default=None):
+        """
+        Return the total for the selected row
+
+        Parameters
+        ----------
+        col_heading: string
+        default: string, optional, default None
+            If column is not found determines the return value
+
+        Returns
+        -------
+        total: int
+        """
         grp_across_list = self.data["groupingsAcross"]["groupings"]
         col_dict = {grp['label']: int(grp['key']) for grp in grp_across_list}
 
@@ -83,6 +124,20 @@ class MatrixParser(ReportParser):
             return default
 
     def get_row_total(self, row_heading, default=None):
+        """
+        Return the total for the selected row
+
+        Parameters
+        ----------
+        row_heading: string
+        default: string, optional, default None
+            If row is not found determines the return value
+
+        Returns
+        -------
+        total: int
+        """
+
         grp_down_list = self.data["groupingsDown"]["groupings"]
         row_dict = {grp["label"]: int(grp["key"]) for grp in grp_down_list}
 
@@ -181,6 +236,24 @@ class MatrixParser(ReportParser):
         return series
 
     def series_down(self, column_groups, row_groups=None, value_position=0):
+        """
+        Return selected slice of a report on a vertical axis
+
+        Parameters
+        ----------
+        column_groups: string or list
+            The selected column to return series from
+            If multiple grouping levels a list is used to identify grouping of interest
+        row_groups: string, list or None, optional, default None
+            Limits rows included in Series to those within specified grouping
+        value_position: int, default 0
+            Index of value of interest, if only one value included by default will select
+            correct value
+
+        Returns
+        -------
+        series: dict, {label: value, ...}
+        """
         static_grouping_key = "groupingsAcross"
         dynamic_grouping_key = "groupingsDown"
 
@@ -188,9 +261,26 @@ class MatrixParser(ReportParser):
                             dynamic_groups_of_interest=row_groups, value_position=value_position)
 
     def series_across(self, row_groups, col_groups=None, value_position=0):
+        """
+        Return selected slice of a report on a horizontal axis
+
+        Parameters
+        ----------
+        row_groups: string or list
+            The selected row to return series from
+            If multiple grouping levels a list is used to identify grouping of interest
+        col_groups: string, list or None, optional, default None
+            Limits cols included in Series to those within specified grouping
+        value_position: int, default 0
+            Index of value of interest, if only one value included by default will select
+            correct value
+
+        Returns
+        -------
+        series: dict, {label: value, ...}
+        """
         static_grouping_key = "groupingsDown"
         dynamic_grouping_key = "groupingsAcross"
 
         return self._series(row_groups, static_grouping_key, dynamic_grouping_key,
                             dynamic_groups_of_interest=col_groups, value_position=value_position)
-

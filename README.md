@@ -1,2 +1,2 @@
 # SalesforceReportingPy
-Python module for accessing and manipulating data using Salesforce Reporting API.
+Get records and data from your Salesforce reports in Python using the Reporting API.
