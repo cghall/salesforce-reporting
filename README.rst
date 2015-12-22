@@ -8,7 +8,7 @@ Get data straight from your Salesforce reports via python using the Analytics AP
 Install
 --------
 
-Install via pip::
+/Install via pip::
     pip install salesforce-reporting
 
 ---------
