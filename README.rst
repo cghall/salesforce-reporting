@@ -1,11 +1,14 @@
 =====================
 Salesforce Reporting
 =====================
+
 Get data straight from your Salesforce reports via python using the Analytics API.
+
 ---------
 Install
 ---------
-::
+
+Install via pip::
     pip install salesforce-reporting
 ---------
 Examples
@@ -13,6 +16,7 @@ Examples
 ^^^^^^^^^^^^^^^
 Authentication
 ^^^^^^^^^^^^^^^
+
 Connect to the Salesforce Analytics API and request data from a report.::
 
     import salesforce_reporting
@@ -24,6 +28,7 @@ Connect to the Salesforce Analytics API and request data from a report.::
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Get records from report
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 Use the ReportParser to access all the records included in a report.::
     report = my_sf.get_report('report_id', includeDetails=True)
     parser = salesforce_reporting.ReportParser(report)
@@ -33,11 +38,12 @@ Use the ReportParser to access all the records included in a report.::
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Extract series from matrix report
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Easily return a specified series from a Matrix Report.
 
-![Alt text](examples/matrix_report.jpg)
+.. image:: examples/matrix_report.jpg
 
-For this report doing this::
+For this report doing::
 
     report = my_sf.get_report('report_id')
     matrix_parser = salesforce_reporting.MatrixParser(report)
