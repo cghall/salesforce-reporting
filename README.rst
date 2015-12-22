@@ -4,12 +4,13 @@ Salesforce Reporting
 
 Get data straight from your Salesforce reports via python using the Analytics API.
 
----------
+--------
 Install
----------
+--------
 
 Install via pip::
     pip install salesforce-reporting
+
 ---------
 Examples
 ---------
@@ -30,6 +31,7 @@ Get records from report
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Use the ReportParser to access all the records included in a report.::
+
     report = my_sf.get_report('report_id', includeDetails=True)
     parser = salesforce_reporting.ReportParser(report)
 
