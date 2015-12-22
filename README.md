@@ -1,9 +1,9 @@
-# salesforce_reporting
+# Salesforce Reporting
 Get data straight from your Salesforce reports via python using the Analytics API.
 
 ## Install
 
-   pip install salesforce-reporting
+    pip install salesforce-reporting
 
 ## Examples
 
