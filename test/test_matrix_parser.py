@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from reporting import MatrixParser
+from salesforce_reporting import MatrixParser
 
 
 class MatrixParserTest(unittest.TestCase):

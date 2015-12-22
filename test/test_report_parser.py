@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from reporting import ReportParser
+from salesforce_reporting import ReportParser
 
 
 class ReportParserTest(unittest.TestCase):
