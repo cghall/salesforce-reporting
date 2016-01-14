@@ -18,6 +18,13 @@ class ReportParser:
     def _flatten_record(record):
         return [field["label"] for field in record]
 
+    def _get_field_labels(self):
+        columns = self.data["reportMetadata"]["detailColumns"]
+        ordered_cols = list(enumerate(columns))
+        column_details = self.data["reportExtendedMetadata"]["detailColumnInfo"]
+        labels = {key: column_details[value]["label"] for key, value in ordered_cols}
+        return labels
+
     def records(self):
         """
         Return a list of all records included in the report
@@ -39,6 +46,35 @@ class ReportParser:
 
                 for record in group_records:
                     records.append(record)
+
+            return records
+        else:
+            raise ValueError('Report does not include details so cannot access individual records')
+
+    def records_dict(self):
+        """
+        Return a list of dictionaries for all records in the report in {field: value} format
+
+        If detail rows are not included in the report a ValueError is returned instead.
+
+        Returns
+        -------
+        records: list of dictionaries in {field: value, field: value...} format
+        """
+        if self.has_details:
+            records = []
+            fact_map = self.data["factMap"]
+            groupings = list(fact_map.values())
+            field_labels = self._get_field_labels()
+
+            for group in groupings:
+                rows = group["rows"]
+                group_records = [self._flatten_record(row["dataCells"]) for row in rows]
+
+                for record in group_records:
+                    enumerated = list(enumerate(record))
+                    labelled_record = {field_labels[key]: value for key, value in enumerated}
+                    records.append(labelled_record)
 
             return records
         else:
