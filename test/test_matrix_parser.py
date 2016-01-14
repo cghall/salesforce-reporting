@@ -28,6 +28,7 @@ class MatrixParserTest(unittest.TestCase):
 
         self.assertAlmostEqual(col_total, 86.32, 2)
 
+    @unittest.skip("Functionality not yet added")
     def test_get_col_total_nested_level_down(self):
         report = MatrixParser(self.build_mock_report("test/test_data/nested_matrix.json"))
 

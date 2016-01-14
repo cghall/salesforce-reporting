@@ -20,10 +20,8 @@ class ReportParser:
 
     def _get_field_labels(self):
         columns = self.data["reportMetadata"]["detailColumns"]
-        ordered_cols = list(enumerate(columns))
         column_details = self.data["reportExtendedMetadata"]["detailColumnInfo"]
-        labels = {key: column_details[value]["label"] for key, value in ordered_cols}
-        return labels
+        return {key: column_details[value]["label"] for key, value in enumerate(columns)}
 
     def records(self):
         """
@@ -35,21 +33,20 @@ class ReportParser:
         -------
         records: list
         """
-        if self.has_details:
-            records = []
-            fact_map = self.data["factMap"]
-            groupings = list(fact_map.values())
-
-            for group in groupings:
-                rows = group["rows"]
-                group_records = [self._flatten_record(row["dataCells"]) for row in rows]
-
-                for record in group_records:
-                    records.append(record)
-
-            return records
-        else:
+        if not self.has_details:
             raise ValueError('Report does not include details so cannot access individual records')
+
+        records = []
+        fact_map = self.data["factMap"]
+
+        for group in fact_map.values():
+            rows = group["rows"]
+            group_records = (self._flatten_record(row["dataCells"]) for row in rows)
+
+            for record in group_records:
+                records.append(record)
+
+        return records
 
     def records_dict(self):
         """
@@ -61,24 +58,22 @@ class ReportParser:
         -------
         records: list of dictionaries in {field: value, field: value...} format
         """
-        if self.has_details:
-            records = []
-            fact_map = self.data["factMap"]
-            groupings = list(fact_map.values())
-            field_labels = self._get_field_labels()
-
-            for group in groupings:
-                rows = group["rows"]
-                group_records = [self._flatten_record(row["dataCells"]) for row in rows]
-
-                for record in group_records:
-                    enumerated = list(enumerate(record))
-                    labelled_record = {field_labels[key]: value for key, value in enumerated}
-                    records.append(labelled_record)
-
-            return records
-        else:
+        if not self.has_details:
             raise ValueError('Report does not include details so cannot access individual records')
+
+        records = []
+        fact_map = self.data["factMap"]
+        field_labels = self._get_field_labels()
+
+        for group in fact_map.values():
+            rows = group["rows"]
+            group_records = (self._flatten_record(row["dataCells"]) for row in rows)
+
+            for record in group_records:
+                labelled_record = {field_labels[key]: value for key, value in enumerate(record)}
+                records.append(labelled_record)
+
+        return records
 
 
 class MatrixParser(ReportParser):
