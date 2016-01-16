@@ -19,24 +19,30 @@ Examples
 Authentication
 ^^^^^^^^^^^^^^
 
-Connect to the Salesforce Analytics API and request data from a report::
+Connect to the Salesforce Analytics API using password authentication and request Report data using
+the Salesforce Id of the Report::
 
-    import salesforce_reporting
+    from salesforce_reporting import Connection
 
-    my_sf = salesforce_reporting.Connection('your_id', 'your_secret',
-    'your_username', 'your_password', 'your_instance')
-    my_sf.get_report('report_id', includeDetails=True)
+    sf = Connection(username='your_username', password='your_password', security_token='your_token')
+    sf.get_report('report_id', includeDetails=True)
 
 ^^^^^^^^^^^^^^^^^^^^^^^
-Get records from report
+Get records from a report
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Use the ReportParser to access all the records included in a report::
+Use the ReportParser to access all the records included in a report (in list format)::
 
    report = my_sf.get_report('report_id', includeDetails=True)
    parser = salesforce_reporting.ReportParser(report)
 
    parser.records()
+
+The records_dict() method can also be used to return records in the form of a list of dicts
+in {field: value, field: value} format::
+
+   parser.records_dict()
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Extract series from matrix report
@@ -53,7 +59,6 @@ Will return all values for 'May 2012' as values in a dictionary with the row gro
 ------------
 Coming Soon
 ------------
-- Simplified Authentication process
 - Access to Dashboards
 
 -----------------
