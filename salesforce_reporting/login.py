@@ -72,6 +72,12 @@ class Connection:
 
         response = requests.post(url, request_body, headers=request_headers)
 
+        if response.status_code != 200:
+            exception_code = self.getUniqueElementValueFromXmlString(response.content, 'sf:exceptionCode')
+            exception_msg = self.getUniqueElementValueFromXmlString(response.content, 'sf:exceptionMessage')
+
+            raise AuthenticationFailure(exception_code, exception_msg)
+
         oauth_token = self.getUniqueElementValueFromXmlString(response.content, 'sessionId')
         server_url = self.getUniqueElementValueFromXmlString(response.content, 'serverUrl')
 
@@ -118,3 +124,13 @@ class Connection:
             return self._get_report_filtered(url, filters)
         else:
             return self._get_report_all(url)
+
+
+class AuthenticationFailure(Exception):
+
+    def __init__(self, code, msg):
+        self.code = code
+        self.msg = msg
+
+    def __str__(self):
+        return "{}: {}.".format(self.code, self.msg)

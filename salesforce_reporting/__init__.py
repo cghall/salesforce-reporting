@@ -6,5 +6,6 @@ from salesforce_reporting.parsers import (
 )
 
 from salesforce_reporting.login import (
-    Connection
+    Connection,
+    AuthenticationFailure
 )
