@@ -23,28 +23,14 @@ class Connection:
     """
 
     def __init__(self, username=None, password=None, security_token=None):
-        # payload = {
-        #     'client_id': client_id,
-        #     'client_secret': client_secret,
-        #     'grant_type': 'password',
-        #     'username': username,
-        #     'password': password
-        # }
         self.username = username
         self.password = password
         self.security_token = security_token
         self.login_details = self.login(self.username, self.password, self.security_token)
-        # self.token = self._get_token(payload)
         self.token = self.login_details['oauth']
         self.instance = self.login_details['instance']
         self.headers = {'Authorization': 'OAuth {}'.format(self.token)}
         self.base_url = 'https://{}/services/data/v29.0/analytics/reports/'.format(self.instance)
-
-    # @staticmethod
-    # def _get_token(payload):
-    #     login_url = 'https://login.salesforce.com/services/oauth2/token'
-    #     token_request = requests.post(login_url, data=payload)
-    #     return token_request.json()['access_token']
 
     @staticmethod
     def getUniqueElementValueFromXmlString(xml_string, element_name):
