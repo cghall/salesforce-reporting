@@ -1,0 +1,3912 @@
+{
+  "groupingsDown": {
+    "groupings": [
+      {
+        "value": "Existing Customer - Upgrade",
+        "key": "0",
+        "label": "Existing Customer - Upgrade",
+        "groupings": [
+          {
+            "value": "00158000002dk2KAAQ",
+            "key": "0_0",
+            "label": "Edge Communications",
+            "groupings": []
+          },
+          {
+            "value": "00158000002dk2UAAQ",
+            "key": "0_1",
+            "label": "GenePoint",
+            "groupings": []
+          },
+          {
+            "value": "00158000002dk2OAAQ",
+            "key": "0_2",
+            "label": "Grand Hotels & Resorts Ltd",
+            "groupings": []
+          },
+          {
+            "value": "00158000002dk2PAAQ",
+            "key": "0_3",
+            "label": "United Oil & Gas Corp.",
+            "groupings": []
+          },
+          {
+            "value": "00158000002dk2RAAQ",
+            "key": "0_4",
+            "label": "University of Arizona",
+            "groupings": []
+          }
+        ]
+      },
+      {
+        "value": "New Customer",
+        "key": "1",
+        "label": "New Customer",
+        "groupings": [
+          {
+            "value": "00158000002dk2LAAQ",
+            "key": "1_0",
+            "label": "Burlington Textiles Corp of America",
+            "groupings": []
+          },
+          {
+            "value": "00158000002dk2KAAQ",
+            "key": "1_1",
+            "label": "Edge Communications",
+            "groupings": []
+          },
+          {
+            "value": "00158000002dk2QAAQ",
+            "key": "1_2",
+            "label": "Express Logistics and Transport",
+            "groupings": []
+          },
+          {
+            "value": "00158000002dk2UAAQ",
+            "key": "1_3",
+            "label": "GenePoint",
+            "groupings": []
+          },
+          {
+            "value": "00158000002dk2OAAQ",
+            "key": "1_4",
+            "label": "Grand Hotels & Resorts Ltd",
+            "groupings": []
+          },
+          {
+            "value": "00158000002dk2PAAQ",
+            "key": "1_5",
+            "label": "United Oil & Gas Corp.",
+            "groupings": []
+          },
+          {
+            "value": "00158000002dk2RAAQ",
+            "key": "1_6",
+            "label": "University of Arizona",
+            "groupings": []
+          }
+        ]
+      }
+    ]
+  },
+  "reportMetadata": {
+    "reportFilters": [],
+    "aggregates": [
+      "s!SALES",
+      "s!AMOUNT",
+      "RowCount"
+    ],
+    "currency": null,
+    "groupingsAcross": [
+      {
+        "name": "FISCAL_QUARTER",
+        "sortOrder": "Asc",
+        "dateGranularity": "None"
+      },
+      {
+        "name": "CLOSE_DATE",
+        "sortOrder": "Asc",
+        "dateGranularity": "Month"
+      }
+    ],
+    "groupingsDown": [
+      {
+        "name": "TYPE",
+        "sortOrder": "Asc",
+        "dateGranularity": "None"
+      },
+      {
+        "name": "ACCOUNT_NAME",
+        "sortOrder": "Asc",
+        "dateGranularity": "None"
+      }
+    ],
+    "reportFormat": "MATRIX",
+    "detailColumns": [
+      "SALES",
+      "OPPORTUNITY_NAME",
+      "AMOUNT",
+      "STAGE_NAME",
+      "FULL_NAME"
+    ],
+    "reportBooleanFilter": null,
+    "reportType": {
+      "label": "Opportunities",
+      "type": "Opportunity"
+    },
+    "name": "[Analytics API Test] Complex Matrix",
+    "id": "00O58000000quEHEAY",
+    "developerName": "Analytics_API_Test_Complex_Matrix"
+  },
+  "hasDetailRows": false,
+  "groupingsAcross": {
+    "groupings": [
+      {
+        "value": "Q3-2007",
+        "key": "0",
+        "label": "Q3-2007",
+        "groupings": [
+          {
+            "value": "2013-12-01",
+            "key": "0_0",
+            "label": "December 2013",
+            "groupings": []
+          }
+        ]
+      },
+      {
+        "value": "Q2-2013",
+        "key": "1",
+        "label": "Q2-2013",
+        "groupings": [
+          {
+            "value": "2013-05-01",
+            "key": "1_0",
+            "label": "May 2013",
+            "groupings": []
+          }
+        ]
+      },
+      {
+        "value": "Q3-2013",
+        "key": "2",
+        "label": "Q3-2013",
+        "groupings": [
+          {
+            "value": "2013-09-01",
+            "key": "2_0",
+            "label": "September 2013",
+            "groupings": []
+          }
+        ]
+      },
+      {
+        "value": "Q4-2013",
+        "key": "3",
+        "label": "Q4-2013",
+        "groupings": [
+          {
+            "value": "2013-10-01",
+            "key": "3_0",
+            "label": "October 2013",
+            "groupings": []
+          },
+          {
+            "value": "2013-12-01",
+            "key": "3_1",
+            "label": "December 2013",
+            "groupings": []
+          }
+        ]
+      },
+      {
+        "value": "Q1-2014",
+        "key": "4",
+        "label": "Q1-2014",
+        "groupings": [
+          {
+            "value": "2014-02-01",
+            "key": "4_0",
+            "label": "February 2014",
+            "groupings": []
+          },
+          {
+            "value": "2014-03-01",
+            "key": "4_1",
+            "label": "March 2014",
+            "groupings": []
+          }
+        ]
+      },
+      {
+        "value": "Q2-2014",
+        "key": "5",
+        "label": "Q2-2014",
+        "groupings": [
+          {
+            "value": "2014-04-01",
+            "key": "5_0",
+            "label": "April 2014",
+            "groupings": []
+          }
+        ]
+      }
+    ]
+  },
+  "factMap": {
+    "1_5!0": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 915000,
+          "label": "\u00a3915,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_3!4": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 270000,
+          "label": "\u00a3270,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_6!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_3!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!3_0": {
+      "aggregates": [
+        {
+          "value": 30000000,
+          "label": "\u00a330,000,000"
+        },
+        {
+          "value": 30000,
+          "label": "\u00a330,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0!0": {
+      "aggregates": [
+        {
+          "value": 5739000000,
+          "label": "\u00a35,739,000,000"
+        },
+        {
+          "value": 590000,
+          "label": "\u00a3590,000.00"
+        },
+        {
+          "value": 3,
+          "label": "3"
+        }
+      ]
+    },
+    "0_2!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0!3_1": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 120000,
+          "label": "\u00a3120,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0!4_1": {
+      "aggregates": [
+        {
+          "value": 6100000000,
+          "label": "\u00a36,100,000,000"
+        },
+        {
+          "value": 360000,
+          "label": "\u00a3360,000.00"
+        },
+        {
+          "value": 2,
+          "label": "2"
+        }
+      ]
+    },
+    "0_1!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_3!3": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 120000,
+          "label": "\u00a3120,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_1!0_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_1!T": {
+      "aggregates": [
+        {
+          "value": 30000000,
+          "label": "\u00a330,000,000"
+        },
+        {
+          "value": 30000,
+          "label": "\u00a330,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_0!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_4!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_2!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_4!0_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!5": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 350000,
+          "label": "\u00a3350,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_5!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_5!4": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_4!3": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!5_0": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 350000,
+          "label": "\u00a3350,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_6!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_0!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_0!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_4!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_6!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_3!0_0": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 440000,
+          "label": "\u00a3440,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_3!2_0": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 120000,
+          "label": "\u00a3120,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_1!4": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!3_1": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 120000,
+          "label": "\u00a3120,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_4!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!3": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_0!1": {
+      "aggregates": [
+        {
+          "value": 139000000,
+          "label": "\u00a3139,000,000"
+        },
+        {
+          "value": 50000,
+          "label": "\u00a350,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_3!T": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 1185000,
+          "label": "\u00a31,185,000.00"
+        },
+        {
+          "value": 5,
+          "label": "5"
+        }
+      ]
+    },
+    "1_1!0_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_0!0_0": {
+      "aggregates": [
+        {
+          "value": 139000000,
+          "label": "\u00a3139,000,000"
+        },
+        {
+          "value": 60000,
+          "label": "\u00a360,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_4!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_5!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_0!0_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_1!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0!1_0": {
+      "aggregates": [
+        {
+          "value": 5739000000,
+          "label": "\u00a35,739,000,000"
+        },
+        {
+          "value": 285000,
+          "label": "\u00a3285,000.00"
+        },
+        {
+          "value": 2,
+          "label": "2"
+        }
+      ]
+    },
+    "1_2!1_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_4!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_4!0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 90000,
+          "label": "\u00a390,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_4!4": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_1!3_0": {
+      "aggregates": [
+        {
+          "value": 30000000,
+          "label": "\u00a330,000,000"
+        },
+        {
+          "value": 30000,
+          "label": "\u00a330,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1!1": {
+      "aggregates": [
+        {
+          "value": 139000000,
+          "label": "\u00a3139,000,000"
+        },
+        {
+          "value": 75000,
+          "label": "\u00a375,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "T!T": {
+      "aggregates": [
+        {
+          "value": 7569000000,
+          "label": "\u00a37,569,000,000"
+        },
+        {
+          "value": 3645000,
+          "label": "\u00a33,645,000.00"
+        },
+        {
+          "value": 18,
+          "label": "18"
+        }
+      ]
+    },
+    "0_4!T": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 90000,
+          "label": "\u00a390,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0!1": {
+      "aggregates": [
+        {
+          "value": 5739000000,
+          "label": "\u00a35,739,000,000"
+        },
+        {
+          "value": 285000,
+          "label": "\u00a3285,000.00"
+        },
+        {
+          "value": 2,
+          "label": "2"
+        }
+      ]
+    },
+    "1_0!1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_0!0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_3!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0!0_0": {
+      "aggregates": [
+        {
+          "value": 5739000000,
+          "label": "\u00a35,739,000,000"
+        },
+        {
+          "value": 590000,
+          "label": "\u00a3590,000.00"
+        },
+        {
+          "value": 3,
+          "label": "3"
+        }
+      ]
+    },
+    "1_4!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!3": {
+      "aggregates": [
+        {
+          "value": 5630000000,
+          "label": "\u00a35,630,000,000"
+        },
+        {
+          "value": 150000,
+          "label": "\u00a3150,000.00"
+        },
+        {
+          "value": 2,
+          "label": "2"
+        }
+      ]
+    },
+    "0_1!0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0!5_0": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 350000,
+          "label": "\u00a3350,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0!3_0": {
+      "aggregates": [
+        {
+          "value": 30000000,
+          "label": "\u00a330,000,000"
+        },
+        {
+          "value": 30000,
+          "label": "\u00a330,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_6!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_0!4_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_3!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!2_0": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 120000,
+          "label": "\u00a3120,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_1!1_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!4_0": {
+      "aggregates": [
+        {
+          "value": 350000000,
+          "label": "\u00a3350,000,000"
+        },
+        {
+          "value": 235000,
+          "label": "\u00a3235,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_4!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_4!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!1": {
+      "aggregates": [
+        {
+          "value": 139000000,
+          "label": "\u00a3139,000,000"
+        },
+        {
+          "value": 75000,
+          "label": "\u00a375,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_3!0": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 440000,
+          "label": "\u00a3440,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1!0_0": {
+      "aggregates": [
+        {
+          "value": 5630000000,
+          "label": "\u00a35,630,000,000"
+        },
+        {
+          "value": 1050000,
+          "label": "\u00a31,050,000.00"
+        },
+        {
+          "value": 3,
+          "label": "3"
+        }
+      ]
+    },
+    "0_3!1_0": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 235000,
+          "label": "\u00a3235,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_2!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_3!0_0": {
+      "aggregates": [
+        {
+          "value": 30000000,
+          "label": "\u00a330,000,000"
+        },
+        {
+          "value": 85000,
+          "label": "\u00a385,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_0!4_0": {
+      "aggregates": [
+        {
+          "value": 350000000,
+          "label": "\u00a3350,000,000"
+        },
+        {
+          "value": 235000,
+          "label": "\u00a3235,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_4!0_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 90000,
+          "label": "\u00a390,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_6!0_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 50000,
+          "label": "\u00a350,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0!2": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 120000,
+          "label": "\u00a3120,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_4!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!T": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 440000,
+          "label": "\u00a3440,000.00"
+        },
+        {
+          "value": 2,
+          "label": "2"
+        }
+      ]
+    },
+    "0!T": {
+      "aggregates": [
+        {
+          "value": 6269000000,
+          "label": "\u00a36,269,000,000"
+        },
+        {
+          "value": 1855000,
+          "label": "\u00a31,855,000.00"
+        },
+        {
+          "value": 11,
+          "label": "11"
+        }
+      ]
+    },
+    "0_0!T": {
+      "aggregates": [
+        {
+          "value": 139000000,
+          "label": "\u00a3139,000,000"
+        },
+        {
+          "value": 110000,
+          "label": "\u00a3110,000.00"
+        },
+        {
+          "value": 2,
+          "label": "2"
+        }
+      ]
+    },
+    "0!3": {
+      "aggregates": [
+        {
+          "value": 5630000000,
+          "label": "\u00a35,630,000,000"
+        },
+        {
+          "value": 150000,
+          "label": "\u00a3150,000.00"
+        },
+        {
+          "value": 2,
+          "label": "2"
+        }
+      ]
+    },
+    "1!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_4!T": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 210000,
+          "label": "\u00a3210,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_5!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_2!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_2!0_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_0!3": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!4_1": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 90000,
+          "label": "\u00a390,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1!4_0": {
+      "aggregates": [
+        {
+          "value": 350000000,
+          "label": "\u00a3350,000,000"
+        },
+        {
+          "value": 235000,
+          "label": "\u00a3235,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_3!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_0!1_0": {
+      "aggregates": [
+        {
+          "value": 139000000,
+          "label": "\u00a3139,000,000"
+        },
+        {
+          "value": 50000,
+          "label": "\u00a350,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_5!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!1_0": {
+      "aggregates": [
+        {
+          "value": 5739000000,
+          "label": "\u00a35,739,000,000"
+        },
+        {
+          "value": 360000,
+          "label": "\u00a3360,000.00"
+        },
+        {
+          "value": 3,
+          "label": "3"
+        }
+      ]
+    },
+    "1!1_0": {
+      "aggregates": [
+        {
+          "value": 139000000,
+          "label": "\u00a3139,000,000"
+        },
+        {
+          "value": 75000,
+          "label": "\u00a375,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_5!4_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_5!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1!T": {
+      "aggregates": [
+        {
+          "value": 7569000000,
+          "label": "\u00a37,569,000,000"
+        },
+        {
+          "value": 1790000,
+          "label": "\u00a31,790,000.00"
+        },
+        {
+          "value": 7,
+          "label": "7"
+        }
+      ]
+    },
+    "1_2!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_5!0_0": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 915000,
+          "label": "\u00a3915,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_4!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!0_0": {
+      "aggregates": [
+        {
+          "value": 5769000000,
+          "label": "\u00a35,769,000,000"
+        },
+        {
+          "value": 1640000,
+          "label": "\u00a31,640,000.00"
+        },
+        {
+          "value": 6,
+          "label": "6"
+        }
+      ]
+    },
+    "0_4!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_6!0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 50000,
+          "label": "\u00a350,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_1!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_1!1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!5": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 350000,
+          "label": "\u00a3350,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_0!1_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_2!0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_3!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_6!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_4!4_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_6!4_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1!4_1": {
+      "aggregates": [
+        {
+          "value": 1450000000,
+          "label": "\u00a31,450,000,000"
+        },
+        {
+          "value": 430000,
+          "label": "\u00a3430,000.00"
+        },
+        {
+          "value": 2,
+          "label": "2"
+        }
+      ]
+    },
+    "1_4!1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_4!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_3!2": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 120000,
+          "label": "\u00a3120,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_5!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_2!4": {
+      "aggregates": [
+        {
+          "value": 950000000,
+          "label": "\u00a3950,000,000"
+        },
+        {
+          "value": 220000,
+          "label": "\u00a3220,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_1!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_4!1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_0!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_0!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!5_0": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 350000,
+          "label": "\u00a3350,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_2!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_3!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_3!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_3!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_1!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!1": {
+      "aggregates": [
+        {
+          "value": 5739000000,
+          "label": "\u00a35,739,000,000"
+        },
+        {
+          "value": 360000,
+          "label": "\u00a3360,000.00"
+        },
+        {
+          "value": 3,
+          "label": "3"
+        }
+      ]
+    },
+    "1_3!1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_2!4_1": {
+      "aggregates": [
+        {
+          "value": 950000000,
+          "label": "\u00a3950,000,000"
+        },
+        {
+          "value": 220000,
+          "label": "\u00a3220,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_5!T": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 915000,
+          "label": "\u00a3915,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_2!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_3!T": {
+      "aggregates": [
+        {
+          "value": 30000000,
+          "label": "\u00a330,000,000"
+        },
+        {
+          "value": 85000,
+          "label": "\u00a385,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_0!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_1!3": {
+      "aggregates": [
+        {
+          "value": 30000000,
+          "label": "\u00a330,000,000"
+        },
+        {
+          "value": 30000,
+          "label": "\u00a330,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_3!3": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_4!4_1": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 210000,
+          "label": "\u00a3210,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_5!1_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_0!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!0": {
+      "aggregates": [
+        {
+          "value": 5769000000,
+          "label": "\u00a35,769,000,000"
+        },
+        {
+          "value": 1640000,
+          "label": "\u00a31,640,000.00"
+        },
+        {
+          "value": 6,
+          "label": "6"
+        }
+      ]
+    },
+    "0_0!4_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!2": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 120000,
+          "label": "\u00a3120,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_0!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_6!4": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_2!1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!0_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_1!4": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_4!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!4": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 90000,
+          "label": "\u00a390,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_0!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_0!3": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0!2_0": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 120000,
+          "label": "\u00a3120,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_0!4": {
+      "aggregates": [
+        {
+          "value": 350000000,
+          "label": "\u00a3350,000,000"
+        },
+        {
+          "value": 235000,
+          "label": "\u00a3235,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_0!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_3!1_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!1_0": {
+      "aggregates": [
+        {
+          "value": 139000000,
+          "label": "\u00a3139,000,000"
+        },
+        {
+          "value": 75000,
+          "label": "\u00a375,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_3!4": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_4!1_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_0!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!1_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!T": {
+      "aggregates": [
+        {
+          "value": 139000000,
+          "label": "\u00a3139,000,000"
+        },
+        {
+          "value": 75000,
+          "label": "\u00a375,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_3!1": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 235000,
+          "label": "\u00a3235,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_4!5_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_6!1_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_4!4": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 210000,
+          "label": "\u00a3210,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_0!T": {
+      "aggregates": [
+        {
+          "value": 350000000,
+          "label": "\u00a3350,000,000"
+        },
+        {
+          "value": 235000,
+          "label": "\u00a3235,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_3!2": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_3!0": {
+      "aggregates": [
+        {
+          "value": 30000000,
+          "label": "\u00a330,000,000"
+        },
+        {
+          "value": 85000,
+          "label": "\u00a385,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_2!3": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!4_1": {
+      "aggregates": [
+        {
+          "value": 7050000000,
+          "label": "\u00a37,050,000,000"
+        },
+        {
+          "value": 790000,
+          "label": "\u00a3790,000.00"
+        },
+        {
+          "value": 4,
+          "label": "4"
+        }
+      ]
+    },
+    "0_4!1_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_6!1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_1!4_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_4!0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0!4": {
+      "aggregates": [
+        {
+          "value": 6100000000,
+          "label": "\u00a36,100,000,000"
+        },
+        {
+          "value": 360000,
+          "label": "\u00a3360,000.00"
+        },
+        {
+          "value": 2,
+          "label": "2"
+        }
+      ]
+    },
+    "1_2!3_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_1!4_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_0!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1!3": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_2!T": {
+      "aggregates": [
+        {
+          "value": 950000000,
+          "label": "\u00a3950,000,000"
+        },
+        {
+          "value": 220000,
+          "label": "\u00a3220,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_4!3": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_3!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1!0": {
+      "aggregates": [
+        {
+          "value": 5630000000,
+          "label": "\u00a35,630,000,000"
+        },
+        {
+          "value": 1050000,
+          "label": "\u00a31,050,000.00"
+        },
+        {
+          "value": 3,
+          "label": "3"
+        }
+      ]
+    },
+    "1_5!1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_3!4_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1!4": {
+      "aggregates": [
+        {
+          "value": 1800000000,
+          "label": "\u00a31,800,000,000"
+        },
+        {
+          "value": 665000,
+          "label": "\u00a3665,000.00"
+        },
+        {
+          "value": 3,
+          "label": "3"
+        }
+      ]
+    },
+    "1_3!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_0!0": {
+      "aggregates": [
+        {
+          "value": 139000000,
+          "label": "\u00a3139,000,000"
+        },
+        {
+          "value": 60000,
+          "label": "\u00a360,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "0_0!4": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "T!4": {
+      "aggregates": [
+        {
+          "value": 7400000000,
+          "label": "\u00a37,400,000,000"
+        },
+        {
+          "value": 1025000,
+          "label": "\u00a31,025,000.00"
+        },
+        {
+          "value": 5,
+          "label": "5"
+        }
+      ]
+    },
+    "0_3!3_1": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 120000,
+          "label": "\u00a3120,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_2!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_6!3": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_0!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_1!4_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_6!3_1": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0!5": {
+      "aggregates": [
+        {
+          "value": 500000000,
+          "label": "\u00a3500,000,000"
+        },
+        {
+          "value": 350000,
+          "label": "\u00a3350,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_6!2_0": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_2!3": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_5!5": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "1_5!3": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 0,
+          "label": "\u00a30.00"
+        },
+        {
+          "value": 0,
+          "label": "0"
+        }
+      ]
+    },
+    "0_3!4_1": {
+      "aggregates": [
+        {
+          "value": 5600000000,
+          "label": "\u00a35,600,000,000"
+        },
+        {
+          "value": 270000,
+          "label": "\u00a3270,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    },
+    "1_6!T": {
+      "aggregates": [
+        {
+          "value": 0,
+          "label": "\u00a30"
+        },
+        {
+          "value": 50000,
+          "label": "\u00a350,000.00"
+        },
+        {
+          "value": 1,
+          "label": "1"
+        }
+      ]
+    }
+  },
+  "allData": true,
+  "attributes": {
+    "reportName": "[Analytics API Test] Complex Matrix",
+    "reportId": "00O58000000quEHEAY",
+    "type": "Report",
+    "describeUrl": "/services/data/v29.0/analytics/reports/00O58000000quEHEAY/describe",
+    "instancesUrl": "/services/data/v29.0/analytics/reports/00O58000000quEHEAY/instances"
+  },
+  "reportExtendedMetadata": {
+    "aggregateColumnInfo": {
+      "RowCount": {
+        "downGroupingContext": null,
+        "acrossGroupingContext": null,
+        "dataType": "int",
+        "label": "Record Count"
+      },
+      "s!AMOUNT": {
+        "downGroupingContext": null,
+        "acrossGroupingContext": null,
+        "dataType": "currency",
+        "label": "Sum of Amount"
+      },
+      "s!SALES": {
+        "downGroupingContext": null,
+        "acrossGroupingContext": null,
+        "dataType": "currency",
+        "label": "Sum of Annual Revenue"
+      }
+    },
+    "groupingColumnInfo": {
+      "CLOSE_DATE": {
+        "groupingLevel": 1,
+        "dataType": "date",
+        "label": "Close Date"
+      },
+      "FISCAL_QUARTER": {
+        "groupingLevel": 0,
+        "dataType": "string",
+        "label": "Fiscal Period"
+      },
+      "ACCOUNT_NAME": {
+        "groupingLevel": 1,
+        "dataType": "string",
+        "label": "Account Name"
+      },
+      "TYPE": {
+        "groupingLevel": 0,
+        "dataType": "picklist",
+        "label": "Type"
+      }
+    },
+    "detailColumnInfo": {
+      "STAGE_NAME": {
+        "dataType": "picklist",
+        "label": "Stage"
+      },
+      "OPPORTUNITY_NAME": {
+        "dataType": "string",
+        "label": "Opportunity Name"
+      },
+      "FULL_NAME": {
+        "dataType": "string",
+        "label": "Opportunity Owner"
+      },
+      "SALES": {
+        "dataType": "currency",
+        "label": "Annual Revenue"
+      },
+      "AMOUNT": {
+        "dataType": "currency",
+        "label": "Amount"
+      }
+    }
+  }
+}

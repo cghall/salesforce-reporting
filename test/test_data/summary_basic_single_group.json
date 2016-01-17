@@ -1,0 +1,603 @@
+{
+  "groupingsDown": {
+    "groupings": [
+      {
+        "value": "Customer - Direct",
+        "label": "Customer - Direct",
+        "groupings": [],
+        "key": "0"
+      },
+      {
+        "value": "Customer - Channel",
+        "label": "Customer - Channel",
+        "groupings": [],
+        "key": "1"
+      }
+    ]
+  },
+  "allData": true,
+  "groupingsAcross": {
+    "groupings": []
+  },
+  "hasDetailRows": true,
+  "attributes": {
+    "describeUrl": "/services/data/v29.0/analytics/reports/00O58000000qu8wEAA/describe",
+    "instancesUrl": "/services/data/v29.0/analytics/reports/00O58000000qu8wEAA/instances",
+    "type": "Report",
+    "reportId": "00O58000000qu8wEAA",
+    "reportName": "[Analytics API Test] Basic Summary"
+  },
+  "reportExtendedMetadata": {
+    "groupingColumnInfo": {
+      "TYPE": {
+        "dataType": "picklist",
+        "label": "Type",
+        "groupingLevel": 0
+      }
+    },
+    "aggregateColumnInfo": {
+      "RowCount": {
+        "dataType": "int",
+        "downGroupingContext": null,
+        "acrossGroupingContext": null,
+        "label": "Record Count"
+      },
+      "s!SALES": {
+        "dataType": "currency",
+        "downGroupingContext": null,
+        "acrossGroupingContext": null,
+        "label": "Sum of Annual Revenue"
+      }
+    },
+    "detailColumnInfo": {
+      "CREATED_DATE": {
+        "dataType": "datetime",
+        "label": "Created Date"
+      },
+      "ADDRESS1_STATE": {
+        "dataType": "string",
+        "label": "Billing State/Province"
+      },
+      "ACCOUNT.NAME": {
+        "dataType": "string",
+        "label": "Account Name"
+      },
+      "RATING": {
+        "dataType": "picklist",
+        "label": "Rating"
+      },
+      "USERS.NAME": {
+        "dataType": "string",
+        "label": "Account Owner"
+      },
+      "SALES": {
+        "dataType": "currency",
+        "label": "Annual Revenue"
+      },
+      "INDUSTRY": {
+        "dataType": "picklist",
+        "label": "Industry"
+      }
+    }
+  },
+  "factMap": {
+    "1!T": {
+      "rows": [
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2NAAQ",
+              "label": "Dickenson plc"
+            },
+            {
+              "value": "KS",
+              "label": "KS"
+            },
+            {
+              "value": null,
+              "label": "-"
+            },
+            {
+              "value": "Consulting",
+              "label": "Consulting"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": {
+                "currency": null,
+                "amount": 50000000
+              },
+              "label": "\u00a350,000,000"
+            }
+          ]
+        },
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2QAAQ",
+              "label": "Express Logistics and Transport"
+            },
+            {
+              "value": "OR",
+              "label": "OR"
+            },
+            {
+              "value": "Cold",
+              "label": "Cold"
+            },
+            {
+              "value": "Transportation",
+              "label": "Transportation"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": {
+                "currency": null,
+                "amount": 950000000
+              },
+              "label": "\u00a3950,000,000"
+            }
+          ]
+        },
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2UAAQ",
+              "label": "GenePoint"
+            },
+            {
+              "value": "CA",
+              "label": "CA"
+            },
+            {
+              "value": "Cold",
+              "label": "Cold"
+            },
+            {
+              "value": "Biotechnology",
+              "label": "Biotechnology"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": {
+                "currency": null,
+                "amount": 30000000
+              },
+              "label": "\u00a330,000,000"
+            }
+          ]
+        },
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2MAAQ",
+              "label": "Pyramid Construction Inc."
+            },
+            {
+              "value": null,
+              "label": "-"
+            },
+            {
+              "value": null,
+              "label": "-"
+            },
+            {
+              "value": "Construction",
+              "label": "Construction"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": {
+                "currency": null,
+                "amount": 950000000
+              },
+              "label": "\u00a3950,000,000"
+            }
+          ]
+        },
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2VAAQ",
+              "label": "sForce"
+            },
+            {
+              "value": "CA",
+              "label": "CA"
+            },
+            {
+              "value": "Warm",
+              "label": "Warm"
+            },
+            {
+              "value": null,
+              "label": "-"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": {
+                "currency": null,
+                "amount": 900000000
+              },
+              "label": "\u00a3900,000,000"
+            }
+          ]
+        }
+      ],
+      "aggregates": [
+        {
+          "value": 2880000000,
+          "label": "\u00a32,880,000,000"
+        },
+        {
+          "value": 5,
+          "label": "5"
+        }
+      ]
+    },
+    "0!T": {
+      "rows": [
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2LAAQ",
+              "label": "Burlington Textiles Corp of America"
+            },
+            {
+              "value": "NC",
+              "label": "NC"
+            },
+            {
+              "value": "Warm",
+              "label": "Warm"
+            },
+            {
+              "value": "Apparel",
+              "label": "Apparel"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": {
+                "currency": null,
+                "amount": 350000000
+              },
+              "label": "\u00a3350,000,000"
+            }
+          ]
+        },
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2KAAQ",
+              "label": "Edge Communications"
+            },
+            {
+              "value": "TX",
+              "label": "TX"
+            },
+            {
+              "value": "Hot",
+              "label": "Hot"
+            },
+            {
+              "value": "Electronics",
+              "label": "Electronics"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": {
+                "currency": null,
+                "amount": 139000000
+              },
+              "label": "\u00a3139,000,000"
+            }
+          ]
+        },
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2OAAQ",
+              "label": "Grand Hotels & Resorts Ltd"
+            },
+            {
+              "value": "IL",
+              "label": "IL"
+            },
+            {
+              "value": "Warm",
+              "label": "Warm"
+            },
+            {
+              "value": "Hospitality",
+              "label": "Hospitality"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": {
+                "currency": null,
+                "amount": 500000000
+              },
+              "label": "\u00a3500,000,000"
+            }
+          ]
+        },
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002JCJLAA4",
+              "label": "Python Inc"
+            },
+            {
+              "value": "Greater London",
+              "label": "Greater London"
+            },
+            {
+              "value": "Warm",
+              "label": "Warm"
+            },
+            {
+              "value": "Technology",
+              "label": "Technology"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": null,
+              "label": "-"
+            }
+          ]
+        },
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2TAAQ",
+              "label": "United Oil & Gas, Singapore"
+            },
+            {
+              "value": "Singapore",
+              "label": "Singapore"
+            },
+            {
+              "value": null,
+              "label": "-"
+            },
+            {
+              "value": "Energy",
+              "label": "Energy"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": null,
+              "label": "-"
+            }
+          ]
+        },
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2SAAQ",
+              "label": "United Oil & Gas, UK"
+            },
+            {
+              "value": "UK",
+              "label": "UK"
+            },
+            {
+              "value": null,
+              "label": "-"
+            },
+            {
+              "value": "Energy",
+              "label": "Energy"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": null,
+              "label": "-"
+            }
+          ]
+        },
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2PAAQ",
+              "label": "United Oil & Gas Corp."
+            },
+            {
+              "value": "NY",
+              "label": "NY"
+            },
+            {
+              "value": "Hot",
+              "label": "Hot"
+            },
+            {
+              "value": "Energy",
+              "label": "Energy"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": {
+                "currency": null,
+                "amount": 5600000000
+              },
+              "label": "\u00a35,600,000,000"
+            }
+          ]
+        },
+        {
+          "dataCells": [
+            {
+              "value": "00558000000FkaVAAS",
+              "label": "Chris Hall"
+            },
+            {
+              "value": "00158000002dk2RAAQ",
+              "label": "University of Arizona"
+            },
+            {
+              "value": "AZ",
+              "label": "AZ"
+            },
+            {
+              "value": "Warm",
+              "label": "Warm"
+            },
+            {
+              "value": "Education",
+              "label": "Education"
+            },
+            {
+              "value": "2016-01-16",
+              "label": "16/01/2016"
+            },
+            {
+              "value": null,
+              "label": "-"
+            }
+          ]
+        }
+      ],
+      "aggregates": [
+        {
+          "value": 6589000000,
+          "label": "\u00a36,589,000,000"
+        },
+        {
+          "value": 8,
+          "label": "8"
+        }
+      ]
+    },
+    "T!T": {
+      "rows": [],
+      "aggregates": [
+        {
+          "value": 9469000000,
+          "label": "\u00a39,469,000,000"
+        },
+        {
+          "value": 13,
+          "label": "13"
+        }
+      ]
+    }
+  },
+  "reportMetadata": {
+    "currency": null,
+    "developerName": "Analytics_API_Test_Basic_Summary",
+    "reportBooleanFilter": null,
+    "id": "00O58000000qu8wEAA",
+    "reportFilters": [],
+    "aggregates": [
+      "s!SALES",
+      "RowCount"
+    ],
+    "reportFormat": "SUMMARY",
+    "detailColumns": [
+      "USERS.NAME",
+      "ACCOUNT.NAME",
+      "ADDRESS1_STATE",
+      "RATING",
+      "INDUSTRY",
+      "CREATED_DATE",
+      "SALES"
+    ],
+    "groupingsAcross": [],
+    "groupingsDown": [
+      {
+        "sortOrder": "Asc",
+        "dateGranularity": "None",
+        "name": "TYPE"
+      }
+    ],
+    "reportType": {
+      "type": "AccountList",
+      "label": "Accounts"
+    },
+    "name": "[Analytics API Test] Basic Summary"
+  }
+}

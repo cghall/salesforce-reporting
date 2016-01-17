@@ -25,9 +25,8 @@ class ReportParser:
 
     def records(self):
         """
-        Return a list of all records included in the report
-
-        If detail rows are not included in the report a ValueError is returned instead.
+        Return a list of all records included in the report. If detail rows are not included
+        in the report a ValueError is returned instead.
 
         Returns
         -------
@@ -50,9 +49,8 @@ class ReportParser:
 
     def records_dict(self):
         """
-        Return a list of dictionaries for all records in the report in {field: value} format
-
-        If detail rows are not included in the report a ValueError is returned instead.
+        Return a list of dictionaries for all records in the report in {field: value} format. If detail rows
+        are not included in the report a ValueError is returned instead.
 
         Returns
         -------
@@ -90,20 +88,20 @@ class MatrixParser(ReportParser):
         self._check_type()
 
     def _check_type(self):
-        report_format = self.data["reportMetadata"]["reportFormat"]
-
-        if report_format != "MATRIX":
-            raise ValueError
+        expected = "MATRIX"
+        if self.type != expected:
+            raise ValueError("Incorrect report type. Expected {}, received {}.".format(expected, self.type))
         else:
             pass
 
-    def get_col_total(self, col_heading, default=None):
+    def get_col_total(self, col_label, default=None):
         """
-        Return the total for the selected row
+        Return the total for the specified column. The default arg makes it possible to specify the return
+        value if the column label is not found.
 
         Parameters
         ----------
-        col_heading: string
+        col_label: string
         default: string, optional, default None
             If column is not found determines the return value
 
@@ -115,20 +113,20 @@ class MatrixParser(ReportParser):
         col_dict = {grp['label']: int(grp['key']) for grp in grp_across_list}
 
         try:
-            col_key = col_dict[col_heading]
-            aggregate_key = 'T!{}'.format(col_key)
-            return self.data["factMap"][aggregate_key]["aggregates"][0]["value"]
+            col_key = col_dict[col_label]
+            return self.data["factMap"]['T!{}'.format(col_key)]["aggregates"][0]["value"]
 
         except KeyError:
             return default
 
-    def get_row_total(self, row_heading, default=None):
+    def get_row_total(self, row_label, default=None):
         """
-        Return the total for the selected row
+        Return the total for the specified row. The default arg makes it possible to specify the return
+        value if the column label is not found.
 
         Parameters
         ----------
-        row_heading: string
+        row_label: string
         default: string, optional, default None
             If row is not found determines the return value
 
@@ -136,14 +134,12 @@ class MatrixParser(ReportParser):
         -------
         total: int
         """
-
         grp_down_list = self.data["groupingsDown"]["groupings"]
         row_dict = {grp["label"]: int(grp["key"]) for grp in grp_down_list}
 
         try:
-            row_key = row_dict[row_heading]
-            aggregate_key = '{}!T'.format(row_key)
-            return self.data["factMap"][aggregate_key]["aggregates"][0]["value"]
+            row_key = row_dict[row_label]
+            return self.data["factMap"]['{}!T'.format(row_key)]["aggregates"][0]["value"]
 
         except KeyError:
             return default
