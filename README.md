@@ -1,13 +1,12 @@
 ##Salesforce Reporting##
 
+[![Build Status](https://travis-ci.org/cghall/salesforce-reporting.svg?branch=master)](https://travis-ci.org/cghall/salesforce-reporting)
+
 Get data straight from your Salesforce reports via python using the [Analytics API](https://resources.docs.salesforce.com/sfdc/pdf/salesforce_analytics_rest_api.pdf).
 
 ###Install###
 
-Install via pip:
-```python
-pip install salesforce-reporting
-```
+Install via pip - `pip install salesforce-reporting`
 
 ###Authentication###
 
@@ -35,14 +34,14 @@ in `{field: value, field: value}` format.
 
 ###Extract series from matrix report###
 
-For a matrix report you can return the values in a column grouping by using `MatrixParser.series_down()` which takes the column name as an argument. For example:
+For a matrix report you can return the values in a column grouping by using `MatrixParser.series_down()` which takes the column name as an argument. For example, given a matrix report grouped by Calendar Month:
 ```python
 report = my_sf.get_report('report_id')
 matrix_parser = salesforce_reporting.MatrixParser(report)
 
 matrix_parser.series_down('Jan 2016')
 ```
-This will return all values for 'May 2016' as values in a dictionary with the row groupings as keys.
+This will return all values for 'Jan 2016' as values in a dictionary with the row groupings as keys.
 
 Similarly you can use `MatrixParser.series_across()` to get the values in a particular row.
 
