@@ -30,7 +30,7 @@ class Connection:
         self.token = self.login_details['oauth']
         self.instance = self.login_details['instance']
         self.headers = {'Authorization': 'OAuth {}'.format(self.token)}
-        self.base_url = 'https://{}/services/data/v29.0/analytics/reports/'.format(self.instance)
+        self.base_url = 'https://{}/services/data/v31.0/analytics'.format(self.instance)
 
     @staticmethod
     def getUniqueElementValueFromXmlString(xml_string, element_name):
@@ -118,12 +118,16 @@ class Connection:
         report: JSON
         """
         details = 'true' if details else 'false'
-        url = '{}{}?includeDetails={}'.format(self.base_url, report_id, details)
+        url = '{}/reports/{}?includeDetails={}'.format(self.base_url, report_id, details)
 
         if filters:
             return self._get_report_filtered(url, filters)
         else:
             return self._get_report_all(url)
+
+    def get_dashboard(self, dashboard_id):
+        url = '{}/dashboards/{}/'.format(self.base_url, dashboard_id)
+        return requests.get(url, headers=self.headers).json()
 
 
 class AuthenticationFailure(Exception):
