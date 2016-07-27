@@ -112,7 +112,8 @@ class Connection:
         return requests.get(url + '/describe', headers=self.headers).json()
 
     def _get_report_filtered(self, url, filters):
-        metadata = self._get_metadata(url)
+        metadata_url = url.split('?')[0]
+        metadata = self._get_metadata(metadata_url)
         for report_filter in filters:
             metadata["reportMetadata"]["reportFilters"].append(report_filter)
 
