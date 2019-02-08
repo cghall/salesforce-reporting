@@ -117,7 +117,8 @@ class Connection:
         for report_filter in filters:
             metadata["reportMetadata"]["reportFilters"].append(report_filter)
 
-        return requests.post(url, headers=self.headers, json=metadata).json()
+        return requests.post(url, headers=self.headers, 
+                             json={"reportMetadata": metadata["reportMetadata"]}).json()
 
     def _get_report_all(self, url):
         return requests.post(url, headers=self.headers).json()
