@@ -38,7 +38,7 @@ class Connection:
         self.password = password
         self.security_token = security_token
         self.sandbox = sandbox
-        self.api_version = api_version
+        self.api_version = api_version.lstrip('v')
         self.login_details = self.login(self.username, self.password, self.security_token)
         self.token = self.login_details['oauth']
         self.instance = self.login_details['instance']
